@@ -5,8 +5,6 @@ import java.util.ArrayList;
 
 public class Dijkstra {
 	
-	int A = Integer.MAX_VALUE ,B = Integer.MAX_VALUE,C= Integer.MAX_VALUE,D = Integer.MAX_VALUE,E = Integer.MAX_VALUE;
-	 
 	
 	
 	Vertex vertex;
