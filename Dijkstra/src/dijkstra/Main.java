@@ -3,7 +3,7 @@ package dijkstra;
 public class Main {
 	public static void main(String []args) {
 		
-		
+		// int A = Integer.MAX_VALUE ,B = Integer.MAX_VALUE,C= Integer.MAX_VALUE,D = Integer.MAX_VALUE,E = Integer.MAX_VALUE;
 		Vertex vertex1 = new Vertex("A",1);
 		Vertex vertex2 = new Vertex("B",2);
 		Vertex vertex3 = new Vertex("C",3);
