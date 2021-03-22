@@ -15,3 +15,5 @@
 		* [ ] Consult and compare
 	</li>
 </ul>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif" />
