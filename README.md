@@ -2,6 +2,20 @@
 
 <hr/>
 
+## Introduction
+
+<p>Created by computer scientist Edsger Dijkstra in 1956 and published in 1959, this algorithm solves the shortest path problem in a graph. This algorithm shows the importance of mathematics in conjunction with programming logic.</p>
+
+<p>There is a report in which Dijkstra asked himself:</p>
+
+<p>"What is the shortest distance from Rotterdam to Groningen?"</p>
+
+<p>20 minutes later he created a solution ...</p>
+
+<p>Google maps uses more refined and complex algorithms. To get there it is interesting to understand subjects simpler like that.</p>
+
+## Info
+
 <p>I am recreating based on observation.</p>
 
 <ul>
