@@ -14,7 +14,7 @@
 
 <p>Google maps uses more refined and complex algorithms. To get there it is interesting to understand subjects simpler like that.</p>
 
-## Info
+## Stages
 
 <p>I am recreating based on observation.</p>
 
