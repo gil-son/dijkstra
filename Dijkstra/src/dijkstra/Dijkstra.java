@@ -7,21 +7,104 @@ public class Dijkstra {
 	
 	
 	
-	Vertex vertex;
+	 Vertex vertex;
 	 ArrayList<Vertex> vertexCreate = new ArrayList();
-	
+	 String neighborVertex[] = {};
+	 ArrayList<String> unvisitedVertex = new ArrayList();
+	 ArrayList<String> visitedVertex = new ArrayList();
+	 
+	 
+	 // Vertex
+	 
 	public void newVertex( Vertex vertex) {
 		vertexCreate.add(vertex);
 	}
 	
 	public String showVertex() {
+		System.out.println(" -- Vertex List --");
 		String show  = "";
-		for(Vertex str: vertexCreate){
-			show += str.print() + "\n";
-	   }
+		for(int i=0; i < vertexCreate.size(); i++) { 		// for(Vertex str: vertexCreate){show += str.print() + "\n";  }
+			show += vertexCreate.get(i).print() + "\n";
+		}
 	
 		return show;
 	}
+	
+	// Neighbor Vertex
+	public void addVertexNeighbor( String[] name) {
+		vertexCreate.add(vertex);
+	}
+	
+	public void searchNeighborVertex(Vertex vertex) {
+		System.out.println("Search for Neighbors vertex from "+vertex.getName());
+		System.out.println(vertex.listNeighbors());
+		System.out.println(vertex.getNeighbor().length);
+		
+		// Get just nieghbor
+		
+		for(int i=0; i < vertex.getNeighbor().length; i++ ) {
+			System.out.println(vertex.neighbor[i]);
+		}
+		
+		/*
+		for(int i=0; i < neighborVertex.size(); i++) {
+			if(neighborVertex.get(i).getName() == nameVertex) {
+				for(int j=0; j < neighborVertex.get(j).listNeighbors().length(); j++) {
+					System.out.println(neighborVertex.get(j).listNeighbors());
+				}
+				
+			}else {
+				System.out.println("Not found");
+			}
+		}*/
+	}
+	
+	
+	// Visited Vertex
+	
+	public void addUnvisitedVertex(String nameVertex) {
+		unvisitedVertex.add(nameVertex);
+	}
+	
+	public String showUnvisitedVertex() {
+		System.out.println(" -- Unvisited Vertex List --");
+		String show = "";
+		for(int i=0; i < unvisitedVertex.size(); i++) {
+			show += unvisitedVertex.get(i) + "\n";
+		}
+		return show;
+	}
+	
+	public void removeUnvisitedVertex(String name) {
+		for(int i = 0; i < unvisitedVertex.size(); i++) {
+			if(unvisitedVertex.get(i) == name) {
+				System.out.println("The Vertex "+unvisitedVertex.get(i)+" has been removed from Unvisited Vertex");
+				unvisitedVertex.remove(i);
+			}
+		}
+	}
+	
+	
+	
+	// Unvsited Vertex
+	
+	
+	public void addVisitedVertex(String nameVertex) {
+		visitedVertex.add(nameVertex);
+	}
+	
+	public String showVisitedVertex() {
+		System.out.println(" -- Visited Vertex List --");
+		String show = "";
+		for(int i=0; i < visitedVertex.size(); i++) {
+			show += visitedVertex.get(i) + "\n";
+		}
+		return show;
+	}
+	
+	
+	
+	
 	
 	
 	// Test before you start
