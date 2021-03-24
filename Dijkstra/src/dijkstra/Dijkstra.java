@@ -12,7 +12,7 @@ public class Dijkstra {
 	 String neighborVertex[] = {};
 	 ArrayList<String> unvisitedVertex = new ArrayList();
 	 ArrayList<String> visitedVertex = new ArrayList();
-	 
+	 String[][] previousVertex = new String[5][2];
 	 
 	 // Vertex
 	 
@@ -37,14 +37,16 @@ public class Dijkstra {
 	
 	public void searchNeighborVertex(Vertex vertex) {
 		System.out.println("Search for Neighbors vertex from "+vertex.getName());
-		System.out.println(vertex.listNeighbors());
-		System.out.println(vertex.getNeighbor().length);
+		System.out.println("Name of vertices:"+vertex.listNeighbors());
+		System.out.println("Number of vertices:"+vertex.getNeighbor().length);
 		
 		// Get just nieghbor
 		
 		for(int i=0; i < vertex.getNeighbor().length; i++ ) {
 			System.out.println(vertex.neighbor[i]);
 		}
+		
+		vertex.showNeighborAndValue();
 		
 		/*
 		for(int i=0; i < neighborVertex.size(); i++) {
@@ -103,9 +105,46 @@ public class Dijkstra {
 	}
 	
 	
+	// Neighbor and unvisited
 	
+	public void showNeighborAndUnvisited(Vertex vertex) {
+		System.out.println("Selected Vertex is "+vertex.getName()+" and has value "+vertex.getValue());
+		for(int i=0; i < unvisitedVertex.size() ; i++ ) {
+			
+			for(int j=0; j < vertex.neighbor.length; j++) {
+				if(unvisitedVertex.get(i) == vertex.neighbor[j]) {
+					System.out.println(
+							"Unvisited Vertex: "+unvisitedVertex.get(i)+
+							" And "+vertex.neighbor[j]+" is a Neighbor from "+vertex.getName() + // att
+							" and has Value: "+vertex.neighborValue[j]+
+							" the distance from A has "+(vertex.getValue()+vertex.neighborValue[j]));
+					
+					// Update the short distance from Inital Vertex
+					
+				}
+				
+			}
+			
+
+		}
+		
+	}
 	
+	public void addPreviousVertex(String fixedVertex, String previousVertex, int indice) {
+		this.previousVertex[indice][0] = fixedVertex; this.previousVertex[indice][1] = previousVertex;
+	}
 	
+	public void updatePreviousVertex(String fixedVertex, String previousVertex) {
+		
+	}
+	
+	public void showPreviousVertex() {
+		for(int i=0; i < 5; i++) {
+			for(int j=0; j < 2; j++) {
+				System.out.println(previousVertex[i][j]);
+			}
+		}
+	}
 	
 	// Test before you start
 	
