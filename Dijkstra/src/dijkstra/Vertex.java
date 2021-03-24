@@ -3,17 +3,15 @@ package dijkstra;
 public class Vertex {
 	String name;
 	int value;
-	String previewVertex;
 	String neighbor[] = {} ;
 	int neighborValue[] = {} ;
 	
-	public Vertex(String name, int value, String previewVertex, String[] neighbor, int[] neighborValue) {
+	public Vertex(String name, int value, String[] neighbor, int[] neighborValue) {
 		super();
 		this.name = name;
 		this.value = value;
 		this.neighbor = neighbor;
 		this.neighborValue = neighborValue;
-		this.previewVertex = previewVertex;
 		
 	}
 	
