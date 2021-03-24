@@ -3,45 +3,52 @@ package dijkstra;
 public class Main {
 	public static void main(String []args) {
 		
-		// int A = Integer.MAX_VALUE ,B = Integer.MAX_VALUE,C= Integer.MAX_VALUE,D = Integer.MAX_VALUE,E = Integer.MAX_VALUE;
-		
+		 
 		Dijkstra d = new Dijkstra();
 		
 		
 		
-		Vertex vertex1 = new Vertex("A",1, new String[] {"B","D"}); // Vertex vertex1 = new Vertex("A",1, new String[] {"B","D"});
-		Vertex vertex2 = new Vertex("B",2, new String[] {"A","D","E"});
-		Vertex vertex3 = new Vertex("C",3, new String[] {"B","E"});
-		Vertex vertex4 = new Vertex("D",4, new String[] {"A","B","E"});
-		Vertex vertex5 = new Vertex("E",5, new String[] {"B","C","D"});
+		Vertex vertexA = new Vertex("A",Integer.MAX_VALUE, "", new String[] {"B","D"}, new int[]{6,1}); 
+		Vertex vertexB = new Vertex("B",Integer.MAX_VALUE, "", new String[] {"A","D","E"}, new int[]{6,2,1});
+		Vertex vertexC = new Vertex("C",Integer.MAX_VALUE, "", new String[] {"B","E"}, new int[]{5,5});
+		Vertex vertexD = new Vertex("D",Integer.MAX_VALUE, "", new String[] {"A","B","E"}, new int[]{1,2,1});
+		Vertex vertexE = new Vertex("E",Integer.MAX_VALUE, "", new String[] {"B","C","D"}, new int[]{2,5,1});
+		
 		
 		// Vertex
-		
-		
-		d.newVertex(vertex1);
-		d.newVertex(vertex2);
-		d.newVertex(vertex3);
-		d.newVertex(vertex4);
-		d.newVertex(vertex5);
+		d.newVertex(vertexA);
+		d.newVertex(vertexB);
+		d.newVertex(vertexC);
+		d.newVertex(vertexD);
+		d.newVertex(vertexE);
 		
 		
 		// Unvisited Vertex
-		d.addUnvisitedVertex(vertex1.getName());
-		d.addUnvisitedVertex(vertex2.getName());
-		d.addUnvisitedVertex(vertex3.getName());
-		d.addUnvisitedVertex(vertex4.getName());
-		d.addUnvisitedVertex(vertex5.getName());
-		System.out.println(d.showUnvisitedVertex());
+		d.addUnvisitedVertex(vertexA.getName());
+		d.addUnvisitedVertex(vertexB.getName());
+		d.addUnvisitedVertex(vertexC.getName());
+		d.addUnvisitedVertex(vertexD.getName());
+		d.addUnvisitedVertex(vertexE.getName());
 		
-		d.removeUnvisitedVertex(vertex1.getName());
-		System.out.println(d.showUnvisitedVertex());
+		
+		// Previous Vertex
+		d.addPreviousVertex(vertexA.getName(),"",0);
+		d.addPreviousVertex(vertexB.getName(),"",1);
+		d.addPreviousVertex(vertexC.getName(),"",2);
+		d.addPreviousVertex(vertexD.getName(),"",3);
+		d.addPreviousVertex(vertexE.getName(),"",4);
+		d.showPreviousVertex();
+		
+		//d.removeUnvisitedVertex(vertex1.getName());
+		//System.out.println(d.showUnvisitedVertex());
+		
 		
 		// Visited Vertex
-		d.addVisitedVertex(vertex1.getName());
+		//d.addVisitedVertex(vertex1.getName());
 		//System.out.println(d.showVisitedVertex());
 		
-		System.out.println(d.showVertex());
-		d.searchNeighborVertex(vertex1);
+		//System.out.println(d.showVertex());
+		//d.searchNeighborVertex(vertex1);
 		
 		// Test before you start
 		
@@ -62,7 +69,19 @@ public class Main {
 		*/
 		
 		
+		vertexA.setValue(0);
 		
+		
+		// Area for creat Loop
+		
+		//System.out.println(vertexA.getValue());
+				/*
+				 * Ver os vizinhos e não visitados e calcular o seu valor desde o vértice inicial
+				 * 
+				 */
+		
+		
+		d.showNeighborAndUnvisited(vertexA);
 		
 	}
 }
