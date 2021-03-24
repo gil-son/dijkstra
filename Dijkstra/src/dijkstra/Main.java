@@ -8,11 +8,11 @@ public class Main {
 		
 		
 		
-		Vertex vertexA = new Vertex("A",Integer.MAX_VALUE, "", new String[] {"B","D"}, new int[]{6,1}); 
-		Vertex vertexB = new Vertex("B",Integer.MAX_VALUE, "", new String[] {"A","D","E"}, new int[]{6,2,1});
-		Vertex vertexC = new Vertex("C",Integer.MAX_VALUE, "", new String[] {"B","E"}, new int[]{5,5});
-		Vertex vertexD = new Vertex("D",Integer.MAX_VALUE, "", new String[] {"A","B","E"}, new int[]{1,2,1});
-		Vertex vertexE = new Vertex("E",Integer.MAX_VALUE, "", new String[] {"B","C","D"}, new int[]{2,5,1});
+		Vertex vertexA = new Vertex("A",Integer.MAX_VALUE, new String[] {"B","D"}, new int[]{6,1}); 
+		Vertex vertexB = new Vertex("B",Integer.MAX_VALUE, new String[] {"A","D","E"}, new int[]{6,2,1});
+		Vertex vertexC = new Vertex("C",Integer.MAX_VALUE, new String[] {"B","E"}, new int[]{5,5});
+		Vertex vertexD = new Vertex("D",Integer.MAX_VALUE, new String[] {"A","B","E"}, new int[]{1,2,1});
+		Vertex vertexE = new Vertex("E",Integer.MAX_VALUE, new String[] {"B","C","D"}, new int[]{2,5,1});
 		
 		
 		// Vertex
