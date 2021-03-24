@@ -3,13 +3,17 @@ package dijkstra;
 public class Vertex {
 	String name;
 	int value;
+	String previewVertex;
 	String neighbor[] = {} ;
+	int neighborValue[] = {} ;
 	
-	public Vertex(String name, int value, String[] neighbor) {
+	public Vertex(String name, int value, String previewVertex, String[] neighbor, int[] neighborValue) {
 		super();
 		this.name = name;
 		this.value = value;
 		this.neighbor = neighbor;
+		this.neighborValue = neighborValue;
+		this.previewVertex = previewVertex;
 		
 	}
 	
@@ -51,6 +55,19 @@ public class Vertex {
 		
 		return show;
 	}
+	
+	
+	public void showNeighborAndValue() {
+		System.out.println("Selected Vertex: "+this.getName());
+		for(int i=0; i < this.neighbor.length; i++) {
+			
+				System.out.println(this.neighbor[i]);
+				System.out.println(this.neighborValue[i]);;
+			
+			
+		}
+	}
+	
 	
 	
 	public String print() {
