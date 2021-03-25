@@ -123,7 +123,11 @@ public class Dijkstra {
 					
 					// Update the short distance from Inital Vertex
 					
-						// vértice atual, o valor do vizinho em questão + previous desse vizinho até o ponto inicial
+						// vértice atual, o valor do vizinho em questão + previous.
+						// O previous sempre vai carregar o ponto mais curto até aquele estágio? Caso sim, não precisa sempre voltar tudo?
+					
+						// Precisa sim! Pois pode haver previous de caminhos distintos
+					
 						// é menor que o valor do vértice atual? Se for atualiza o valor do vértice atual
 						//| considerar os viznhos e contar
 						/*
