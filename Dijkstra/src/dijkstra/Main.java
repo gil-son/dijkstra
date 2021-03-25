@@ -31,13 +31,17 @@ public class Main {
 		d.addUnvisitedVertex(vertexE.getName());
 		
 		
+		// Short Distance from Vertex
+		
+		
+		
 		// Previous Vertex
 		d.addPreviousVertex(vertexA.getName(),"",0);
 		d.addPreviousVertex(vertexB.getName(),"",1);
 		d.addPreviousVertex(vertexC.getName(),"",2);
 		d.addPreviousVertex(vertexD.getName(),"",3);
 		d.addPreviousVertex(vertexE.getName(),"",4);
-		d.showPreviousVertex();
+		//d.showPreviousVertex();
 		
 		//d.removeUnvisitedVertex(vertex1.getName());
 		//System.out.println(d.showUnvisitedVertex());
@@ -74,14 +78,35 @@ public class Main {
 		
 		// Area for creat Loop
 		
-		//System.out.println(vertexA.getValue());
-				/*
-				 * Ver os vizinhos e não visitados e calcular o seu valor desde o vértice inicial
-				 * 
-				 */
+		
+		// Visitar os vizinhos não visitados e selecionar o menor
+		
+		// d.updateShortDistancefromInitialVertex("B", -1);
+		
+		switch(d.selectUnvisitedNeighborWithLessValue()) {
+			case "A" : d.showUnvisitedNeighbor(vertexA); break; // Examinar os vizinhos próximos
+			case "B" : d.showUnvisitedNeighbor(vertexB); break; // e Calcular a distância em relação ao Vertex Inicial
+			case "C" : d.showUnvisitedNeighbor(vertexC); break; // Se a distância for menor que a distância conhecida
+			case "D" : d.showUnvisitedNeighbor(vertexD); break; // atualize updateShortDistancefromInitialVertex("",0 )
+			case "E" : d.showUnvisitedNeighbor(vertexE); break;
+		}
 		
 		
-		d.showNeighborAndUnvisited(vertexA);
+		
+		// remover e add
+		
+		
+		
+		 
+		
+		/*
+		d.updatePreviousVertex("A", "B");
+		
+		d.showPreviousVertex();
+		
+		d.updateShortDistancefromInitialVertex("B",6);
+		d.showShortDistancefromInitialVertex();
+		*/
 		
 	}
 }
