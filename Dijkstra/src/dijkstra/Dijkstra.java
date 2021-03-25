@@ -12,6 +12,8 @@ public class Dijkstra {
 	 String neighborVertex[] = {};
 	 ArrayList<String> unvisitedVertex = new ArrayList();
 	 ArrayList<String> visitedVertex = new ArrayList();
+	 
+	
 	 String[][] previousVertex = new String[5][2];
 	 
 	 // Vertex
@@ -107,7 +109,7 @@ public class Dijkstra {
 	
 	// Neighbor and unvisited
 	
-	public void showNeighborAndUnvisited(Vertex vertex) {
+	public void showUnvisitedNeighbor(Vertex vertex) {
 		System.out.println("Selected Vertex is "+vertex.getName()+" and has value "+vertex.getValue());
 		for(int i=0; i < unvisitedVertex.size() ; i++ ) {
 			
@@ -121,6 +123,20 @@ public class Dijkstra {
 					
 					// Update the short distance from Inital Vertex
 					
+						// vértice atual, o valor do vizinho em questão + previous desse vizinho até o ponto inicial
+						// é menor que o valor do vértice atual? Se for atualiza o valor do vértice atual
+						//| considerar os viznhos e contar
+						/*
+						if(vertex.getValue() > (vertex.getValue()+vertex.neighborValue[j])) {
+							vertex.setValue((vertex.getValue()+vertex.neighborValue[j]));
+						}
+					*/
+					// d.updateShortDistancefromInitialVertex("B", -1);
+					
+					
+					// Antes, é preciso fazer a contagem dos vértices até esse ponto utilizando o previous?
+					
+					
 				}
 				
 			}
@@ -130,12 +146,43 @@ public class Dijkstra {
 		
 	}
 	
+	// Short Distance from Initial Vertex
+	
+	public void updateShortDistancefromInitialVertex(String name, int value) {
+	
+		for(int i=0; i < vertexCreate.size(); i++) { 		// for(Vertex str: vertexCreate){show += str.print() + "\n";  }
+			if(vertexCreate.get(i).getName() == name) {
+				vertexCreate.get(i).setValue(value);
+			}
+			
+		}
+	
+	}
+	
+	public void showShortDistancefromInitialVertex() {
+		
+		String show  = "";
+		for(int i=0; i < vertexCreate.size(); i++) { 		// for(Vertex str: vertexCreate){show += str.print() + "\n";  }
+			show += vertexCreate.get(i).getValue() + "\n";
+		}
+		System.out.println(show);
+	}
+	
+	// Previews Vertex
+	
 	public void addPreviousVertex(String fixedVertex, String previousVertex, int indice) {
 		this.previousVertex[indice][0] = fixedVertex; this.previousVertex[indice][1] = previousVertex;
 	}
 	
 	public void updatePreviousVertex(String fixedVertex, String previousVertex) {
-		
+		for(int i =0; i < 5; i++ ) {
+			
+				if(this.previousVertex[i][0] == fixedVertex) {
+					this.previousVertex[i][1] = previousVertex;
+				}
+				//System.out.println(this.previousVertex[i][j]);
+			
+		}
 	}
 	
 	public void showPreviousVertex() {
@@ -145,6 +192,27 @@ public class Dijkstra {
 			}
 		}
 	}
+	
+	
+	// Visitar os vizinhos não visitados e selecionar o menor
+	
+	public String selectUnvisitedNeighborWithLessValue() {
+		int less = Integer.MAX_VALUE;
+		String name = "";
+		for(int i=0; i < unvisitedVertex.size(); i++) {
+			
+				if(vertexCreate.get(i).getValue() < less) {
+					less = vertexCreate.get(i).getValue();
+					name = vertexCreate.get(i).getName();
+				}	
+		}
+		return name;
+	}
+	
+	
+	
+	
+	
 	
 	// Test before you start
 	
