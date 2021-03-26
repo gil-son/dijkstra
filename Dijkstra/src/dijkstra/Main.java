@@ -36,41 +36,14 @@ public class Main {
 		
 		
 		// Previous Vertex
-		d.addPreviousVertex(vertexA.getName(),"",0);
-		d.addPreviousVertex(vertexB.getName(),"",1);
-		d.addPreviousVertex(vertexC.getName(),"",2);
-		d.addPreviousVertex(vertexD.getName(),"",3);
-		d.addPreviousVertex(vertexE.getName(),"",4);
-		//d.showPreviousVertex();
-		
-		//d.removeUnvisitedVertex(vertex1.getName());
-		//System.out.println(d.showUnvisitedVertex());
+		d.addPreviousVertex(vertexA.getName(),"none",0);
+		d.addPreviousVertex(vertexB.getName(),"none",1);
+		d.addPreviousVertex(vertexC.getName(),"none",2);
+		d.addPreviousVertex(vertexD.getName(),"none",3);
+		d.addPreviousVertex(vertexE.getName(),"none",4);
 		
 		
-		// Visited Vertex
-		//d.addVisitedVertex(vertex1.getName());
-		//System.out.println(d.showVisitedVertex());
 		
-		//System.out.println(d.showVertex());
-		//d.searchNeighborVertex(vertex1);
-		
-		// Test before you start
-		
-		/*
-		System.out.println(d.showVertex());
-		
-		d.searchVertex("A");
-		
-		d.setSpecificVertex("A", 15);
-		
-		System.out.println(d.showVertex());
-		
-		d.removeVertex("A");
-		System.out.println(d.showVertex());
-		
-		d.addVertex(new Vertex("Z",12));
-		System.out.println(d.showVertex());
-		*/
 		
 		
 		vertexA.setValue(0);
