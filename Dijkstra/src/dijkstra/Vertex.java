@@ -4,14 +4,14 @@ public class Vertex {
 	String name;
 	int value;
 	String neighbor[] = {} ;
-	int neighborValue[] = {} ;
+	int neighborDistanceValue[] = {} ;
 	
-	public Vertex(String name, int value, String[] neighbor, int[] neighborValue) {
+	public Vertex(String name, int value, String[] neighbor, int[] neighborDistanceValue) {
 		super();
 		this.name = name;
 		this.value = value;
 		this.neighbor = neighbor;
-		this.neighborValue = neighborValue;
+		this.neighborDistanceValue = neighborDistanceValue;
 		
 	}
 	
@@ -60,7 +60,7 @@ public class Vertex {
 		for(int i=0; i < this.neighbor.length; i++) {
 			
 				System.out.println(this.neighbor[i]);
-				System.out.println(this.neighborValue[i]);;
+				System.out.println(this.neighborDistanceValue[i]);;
 			
 			
 		}
