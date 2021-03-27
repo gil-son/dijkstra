@@ -48,38 +48,32 @@ public class Main {
 		
 		vertexA.setValue(0);
 		
+		while( d.unvisitedVertex.size() > 0) {
+			
 		
 		// Area for creat Loop
 		
 		
-		// Visitar os vizinhos não visitados e selecionar o menor
 		
-		// d.updateShortDistancefromInitialVertex("B", -1);
+		
+		// Visitar os vizinhos não visitados e selecionar o menor
 		
 		switch(d.selectUnvisitedNeighborWithLessValue()) {
 			case "A" : d.showUnvisitedNeighbor(vertexA); break; // Examinar os vizinhos próximos
 			case "B" : d.showUnvisitedNeighbor(vertexB); break; // e Calcular a distância em relação ao Vertex Inicial
 			case "C" : d.showUnvisitedNeighbor(vertexC); break; // Se a distância for menor que a distância conhecida
-			case "D" : d.showUnvisitedNeighbor(vertexD); break; // atualize updateShortDistancefromInitialVertex("",0 )
+			case "D" : d.showUnvisitedNeighbor(vertexD); break; // atualize a menor distância daquele vizinho até o vértice Inicial
 			case "E" : d.showUnvisitedNeighbor(vertexE); break;
 		}
 		
 		
-		
-		// remover e add
-		
+		System.out.println("---------- Next ----------");
 		
 		
-		 
 		
-		/*
-		d.updatePreviousVertex("A", "B");
+		
+		}
 		
 		d.showPreviousVertex();
-		
-		d.updateShortDistancefromInitialVertex("B",6);
-		d.showShortDistancefromInitialVertex();
-		*/
-		
 	}
 }
