@@ -8,7 +8,7 @@ public class Dijkstra {
 	
 	
 	 Vertex vertex;
-	 ArrayList<Vertex> vertexCreate = new ArrayList(); // Verify
+	 ArrayList<Vertex> vertexCreate = new ArrayList(); 
 	 String neighborVertex[] = {};
 	 ArrayList<String> unvisitedVertex = new ArrayList();
 	 ArrayList<String> visitedVertex = new ArrayList();
@@ -69,7 +69,7 @@ public class Dijkstra {
 	public void addUnvisitedVertex(String nameVertex) {
 		unvisitedVertex.add(nameVertex);
 	}
-	/*
+	
 	public String showUnvisitedVertex() {
 		System.out.println(" -- Unvisited Vertex List --");
 		String show = "";
@@ -84,23 +84,23 @@ public class Dijkstra {
 		
 		for(int i=0; i < unvisitedVertex.size(); i++) {
 			if(unvisitedVertex.get(i) == name) {
-				unvisitedVertex.remove(i);
 				System.out.println("The Vertex "+unvisitedVertex.get(i)+" has been removed from Unvisited Vertex List");
+				unvisitedVertex.remove(i);
 			}
 		}
 		
 	}
-	*/
+	
 	
 	
 	// Visited Vertex
 	
-	/*
+	
 	public void addVisitedVertex(String name) {
 		visitedVertex.add(name);
-		System.out.println("The vertex"+name+"was add to Visited Vertex List");
-	}*/
-	/*
+		System.out.println("The vertex "+name+" was add to Visited Vertex List");
+	}
+	
 	public String showVisitedVertex() {
 		System.out.println(" -- Visited Vertex List --");
 		String show = "";
@@ -109,7 +109,7 @@ public class Dijkstra {
 		}
 		return show;
 	}
-	*/
+	
 	
 	
 	// Neighbor and unvisited
@@ -143,7 +143,7 @@ public class Dijkstra {
 							getSpecifPreviousVertex(vertex.neighbor[j]);
 							updatePreviousVertex(vertex.neighbor[j], vertex.getName());
 							getSpecifPreviousVertex(vertex.neighbor[j]);
-					
+							
 					
 					}
 					
@@ -158,26 +158,33 @@ public class Dijkstra {
 				
 			}
 				
-				// System.out.println(showUnvisitedVertex());
-				
-				// Remove Select Vertex from Unvisited Vertex
-				// removeUnvisitedVertex(vertex.getName());
-				
-				// Add Vertex Visited to Visited Vertex
-				// addVisitedVertex(vertex.getName());
-				
-				
-				// Show Unvisited Vertex
-				// System.out.println(showUnvisitedVertex());
-				
-				// Show Visited Vertex
-				// System.out.println(showVisitedVertex());
-				
-				// Verify the final vertex?
-			
 		}
 		
+		
+		
+		// Remove Select Vertex from Unvisited Vertex
+		 removeUnvisitedVertex(vertex.getName());
+		
+		// Show Unvisited Vertex
+		 System.out.println(showUnvisitedVertex());
+		 
+		// Add Vertex Visited to Visited Vertex
+		  addVisitedVertex(vertex.getName());
+		
+		
+		
+		// Show Visited Vertex
+		System.out.println(showVisitedVertex());
+		
+		//Untill all vertex verified
+		// Verify the final vertex?
+		
 	}
+	
+	
+	
+	
+	
 	
 	// Short Distance from Initial Vertex
 	
@@ -221,8 +228,9 @@ public class Dijkstra {
 	public void showPreviousVertex() {
 		for(int i=0; i < 5; i++) {
 			for(int j=0; j < 2; j++) {
-				System.out.println(previousVertex[i][j]);
+				System.out.print(previousVertex[i][j]);
 			}
+			System.out.println();
 		}
 	}
 	
@@ -236,15 +244,19 @@ public class Dijkstra {
 	
 	// Visitar os vizinhos não visitados e selecionar o menor
 	
-	public String selectUnvisitedNeighborWithLessValue() {
+	public String selectUnvisitedNeighborWithLessValue() { 
 		int less = Integer.MAX_VALUE;
 		String name = "";
 		for(int i=0; i < unvisitedVertex.size(); i++) {
 			
-				if(vertexCreate.get(i).getValue() < less) {
-					less = vertexCreate.get(i).getValue();
-					name = vertexCreate.get(i).getName();
-				}	
+				for(int j=0; j < vertexCreate.size(); j++) {
+					if(unvisitedVertex.get(i) == vertexCreate.get(j).getName() &&  vertexCreate.get(j).getValue() < less) {
+						less = vertexCreate.get(j).getValue();
+						name = vertexCreate.get(j).getName();
+					}
+					
+				}
+			
 		}
 		return name;
 	}
