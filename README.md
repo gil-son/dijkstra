@@ -23,7 +23,7 @@
 		* [x] Test before you start
 	</li>
 	<li>
-		* [ ] Recreate without consulting
+		* [x] Recreated without consult
 	</li>
 	<li>
 		* [ ] Consult and compare
