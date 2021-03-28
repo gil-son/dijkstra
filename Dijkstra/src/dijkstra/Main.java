@@ -48,6 +48,10 @@ public class Main {
 		
 		vertexA.setValue(0);
 		
+		String initialVertex = vertexA.getName();
+		String finalVertex = vertexC.getName();
+		
+		
 		while( d.unvisitedVertex.size() > 0) {
 			
 		
@@ -74,6 +78,6 @@ public class Main {
 		
 		}
 		
-		d.showPreviousVertex();
+		d.showPreviousVertex(initialVertex, finalVertex);
 	}
 }
