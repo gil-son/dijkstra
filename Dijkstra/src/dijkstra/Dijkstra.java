@@ -12,9 +12,9 @@ public class Dijkstra {
 	 String neighborVertex[] = {};
 	 ArrayList<String> unvisitedVertex = new ArrayList();
 	 ArrayList<String> visitedVertex = new ArrayList();
-	 
-	
 	 String[][] previousVertex = new String[5][2];
+	 ArrayList<String> pathSequence = new ArrayList();
+	 
 	 
 	 // Vertex
 	 
@@ -225,13 +225,39 @@ public class Dijkstra {
 		}
 	}
 	
-	public void showPreviousVertex() {
+	
+	
+	public void showPreviousVertex(String initialVertex, String finalVertex) {
 		for(int i=0; i < 5; i++) {
 			for(int j=0; j < 2; j++) {
 				System.out.print(previousVertex[i][j]);
 			}
 			System.out.println();
 		}
+		System.out.println("--- Organize ---");
+		
+		
+		int i = 0;
+		while(finalVertex != initialVertex) {
+			
+			if(previousVertex[i][0] == finalVertex) {
+				pathSequence.add(previousVertex[i][0]);
+				finalVertex = previousVertex[i][1];
+				i = 0;
+			}
+			
+			if(finalVertex == initialVertex) {
+				pathSequence.add(initialVertex);
+			}
+			i++;
+		}
+		
+		
+		
+		for(int k=pathSequence.size()-1; k >= 0 ; k--) {
+			System.out.println(pathSequence.get(k));
+		}
+		
 	}
 	
 	public void getSpecifPreviousVertex(String name) {
