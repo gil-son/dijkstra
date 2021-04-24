@@ -20,13 +20,13 @@
 
 <ul>
 	<li>
-		* [x] Test before you start
+		* [x] Test before you start;
 	</li>
 	<li>
-		* [x] Recreated without consult
+		* [x] Recreated without consult;
 	</li>
 	<li>
-		* [ ] Consult and compare
+		* [x] Consult and compare.
 	</li>
 </ul>
 
